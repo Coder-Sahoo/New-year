@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>For You ❤️</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- Background Music -->
+<audio id="bgMusic" loop>
+  <source src="C:\Users\Sahil\Music\song.mp3.mpeg" type="audio/mpeg">
+</audio>
+
+<button class="music-btn" onclick="toggleMusic()">🎵</button>
+
+<!-- SECTION 1 -->
+<section id="section1">
+  <div class="card">
+    <h1>I’m So Glad I Met You</h1>
+    <p>
+      Meeting you was one of the most beautiful moments of my life.
+      You came into my world and made everything brighter and more meaningful.
+    </p>
+    <button onclick="goToSection(2)">Next 💕</button>
+  </div>
+</section>
+
+<!-- SECTION 2 -->
+<section id="section2">
+  <div class="card">
+    <h1>How Blessed I Feel</h1>
+    <p>
+      Having you in my life is a blessing I cherish every day.
+      Your love and presence make everything feel right.
+    </p>
+    <button onclick="goToSection(3)">Continue 💖</button>
+  </div>
+</section>
+
+<!-- SECTION 3 -->
+<section id="section3">
+  <div class="card">
+    <h1>Happy New Year, My Love 🎆</h1>
+    <p>
+      As this new year begins, I look forward to spending as much of my life
+      as I can with you — growing, dreaming, and creating memories together.
+    </p>
+
+    <p class="signature">Always yours ❤️</p>
+
+    <button onclick="finalSurprise()">One Last Click ✨</button>
+    <br/>
+    <button onclick="goToSection(1)">↩️ Go Back</button>
+  </div>
+</section>
+
+<script>
+  function goToSection(num) {
+    burstLove();
+    document.getElementById("section" + num)
+      .scrollIntoView({ behavior: "smooth" });
+  }
+
+  function finalSurprise() {
+    burstLove();
+    alert("I love you more than words can say ❤️🌹");
+  }
+
+  // Hearts & roses burst
+  function burstLove() {
+    const icons = ["❤️", "🌹"];
+    for (let i = 0; i < 25; i++) {
+      const item = document.createElement("div");
+      item.className = "float";
+      item.innerHTML = icons[Math.floor(Math.random() * icons.length)];
+      item.style.left = Math.random() * 100 + "vw";
+      item.style.fontSize = (Math.random() * 15 + 18) + "px";
+      item.style.animationDuration = (Math.random() * 2 + 3) + "s";
+      document.body.appendChild(item);
+
+      setTimeout(() => item.remove(), 5000);
+    }
+  }
+
+  // Music control
+  const music = document.getElementById("bgMusic");
+  let playing = false;
+
+  function toggleMusic() {
+    if (!playing) {
+      music.play();
+      playing = true;
+    } else {
+      music.pause();
+      playing = false;
+    }
+  }
+</script>
+
+</body>
+</html>
