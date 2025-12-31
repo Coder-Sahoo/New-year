@@ -1,0 +1,99 @@
+
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: "Segoe UI", sans-serif;
+    }
+
+    body {
+      margin: 0;
+      background: linear-gradient(135deg, #ffdee9, #b5fffc);
+      overflow-x: hidden;
+    }
+
+    section {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.9);
+      padding: 30px;
+      border-radius: 20px;
+      max-width: 600px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    }
+
+    h1 {
+      color: #ff5e8e;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 1.1rem;
+      color: #444;
+      line-height: 1.6;
+    }
+
+    button {
+      margin: 12px;
+      padding: 12px 30px;
+      border: none;
+      border-radius: 30px;
+      font-size: 1rem;
+      background: #ff5e8e;
+      color: white;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+      background: #ff2f6f;
+    }
+
+    .signature {
+      margin-top: 30px;
+      font-style: italic;
+      color: #ff5e8e;
+    }
+
+    /* Floating hearts & roses */
+    .float {
+      position: fixed;
+      bottom: -30px;
+      font-size: 22px;
+      animation: floatUp 5s linear forwards;
+      pointer-events: none;
+    }
+
+    @keyframes floatUp {
+      0% { transform: translateY(0); opacity: 1; }
+      100% { transform: translateY(-100vh); opacity: 0; }
+    }
+
+    /* Music button */
+    .music-btn {
+      position: fixed;
+      top: 15px;
+      right: 15px;
+      background: rgba(255,255,255,0.9);
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      border: none;
+      font-size: 20px;
+      cursor: pointer;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 1.6rem; }
+      p { font-size: 1rem; }
+    }
+  </style>
